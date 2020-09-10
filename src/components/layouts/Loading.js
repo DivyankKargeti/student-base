@@ -1,5 +1,4 @@
 import React from "react";
-import "./assets/spinner.gif";
 
 const Loading = () => {
   return (
