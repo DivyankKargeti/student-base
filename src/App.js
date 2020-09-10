@@ -8,6 +8,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store, { rrfProps } from "./store.js";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
+import Login from "./components/pages/Login.js";
+import PrivateRoute from "./components/routes/PrivateRoute.js";
 
 function App() {
   return (
@@ -15,11 +17,12 @@ function App() {
       <ReactReduxFirebaseProvider {...rrfProps}>
         <BrowserRouter>
           <div className="App">
-            <Navbar />
+            <PrivateRoute component={Navbar} />
             <Switch>
-              <Route exact path="/" component={Students} />
-              <Route exact path="/student/:id" component={Student} />
-              <Route exact path="/studentform/:id?" component={StudentForm} />
+              <PrivateRoute exact path="/" component={Students} />
+              <PrivateRoute exact path="/student/:id" component={Student} />
+              <PrivateRoute exact path="/studentform/:id?" component={StudentForm} />
+              <Route exact path="/login" component={Login} />
             </Switch>
           </div>
         </BrowserRouter>
