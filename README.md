@@ -1,5 +1,7 @@
 # Author: Divyank Kargeti
 
+### This project is developed using the following technologies: React, Bootstrap, Sass, HTML , CSS, JavaScript and Firebase-Firestore.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
