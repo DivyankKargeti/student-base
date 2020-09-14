@@ -1,27 +1,63 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useFirebase } from "react-redux-firebase";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
-    const history = useHistory();
-    const firebase = useFirebase();
-    const [user, setUser] = useState({
-        email:"",
-        password:"",
-    });
+  const history = useHistory();
+  const firebase = useFirebase();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-    const onInputChange = e =>{
-        setUser({...user,[e.target.name]:e.target.value})
-      };
+  const onInputChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
-    const submitForm = async (e) =>{
-        e.preventDefault();
-        await firebase.login(user);
-        history.replace("/");
-    };
+  const submitForm = async (e) => {
+    e.preventDefault();
+    await firebase.login(user);
+    history.replace("/");
+  };
 
   return (
     <div className="container">
+      <br />
+      <br />
+      <br />
+      <div class="card">
+        <div style={{ border: "5px solid #cc5803" }} class="card-body">
+          <h4>
+            <b>Credentials for Login</b>
+          </h4>
+          <ul>
+            <li>
+              <b>
+                <u>For Admin</u>
+              </b>
+            </li>
+            <li>
+              <b>Email:</b> dk@gmail.com
+            </li>
+            <li>
+              <b>Password:</b> your_pw
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <b>
+                <u>For Test Users</u>
+              </b>
+            </li>
+            <li>
+              <b>Email:</b> testuser@gmail.com
+            </li>
+            <li>
+              <b>Password:</b> 123456
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="py-5">
         <div className="row mt-5">
           <div className="col-md-4 offset-md-4">
@@ -31,11 +67,12 @@ const Login = () => {
                   src={require("../../assets/logo2.png")}
                   height="40px"
                   alt="logo"
-                  className= "card-img-top mb-5" height="70px"
+                  className="card-img-top mb-5"
+                  height="70px"
                 />
                 <form onSubmit={submitForm}>
                   <div className="form-group">
-                  <input
+                    <input
                       placeholder="Enter Student E-mail"
                       name="email"
                       className="form-control"

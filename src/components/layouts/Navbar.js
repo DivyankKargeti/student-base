@@ -38,15 +38,8 @@ const Navbar = () => {
                 <span className="ml-2 navbar-text">Divyank Kargeti</span>
               </a>
               <div className="dropdown-menu">
-                <a className="dropdown-item" href="!#">
-                  Profile
-                </a>
                 <a className="dropdown-item" href="!#" onClick={()=>firebase.logout()}>
                   Logout
-                </a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="!#">
-                  Ads
                 </a>
               </div>
             </li>
