@@ -1,4 +1,12 @@
-# Author: Divyank Kargeti
+## Author: Divyank Kargeti
+
+### Screenshots of the final outcome of this project:
+
+![img1](Screenshots_forreadme/login.png)
+
+![img1](Screenshots_forreadme/add.png)
+
+![img1](Screenshots_forreadme/home.png)
 
 ### This project is developed using the following technologies: React, Bootstrap, Sass, HTML , CSS, JavaScript and Firebase-Firestore.
 
